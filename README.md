@@ -4,6 +4,19 @@
 
 ## 動かす
 
+### GitHub Codespaces
+
+[GitHub Codespacesで開く](https://codespaces.new/Mori-Taiki/DddTrilemmaHaskell?ref=main) からCodespaceを作成します。初回はGHCとCabalの準備、依存関係の取得、APIとテストのビルドが自動で行われます。準備が終わったらターミナルで実行します。
+
+```sh
+cabal test --test-show-details=direct
+cabal run story-api
+```
+
+ブラウザで作品一覧を見るには、**ポート（Ports）** タブから **5080（Story API）** を開き、URLの末尾に `/stories` を付けます。下のcurl例はCodespace内の別のターミナルで実行できます。既存のCodespaceに設定を適用する場合は、最新の `main` を取得してコマンドパレットから **Codespaces: Rebuild Container** を実行してください。
+
+### ローカル環境
+
 GHC 9.6.6、cabal-install 3.10.3.0で検証しています。リポジトリ直下で実行します。
 
 ```sh
@@ -11,6 +24,8 @@ cabal update
 cabal test --test-show-details=direct
 cabal run story-api
 ```
+
+### APIを試す
 
 別の端末から次の順に試せます。初回起動時に4作品を投入します。変更は作業ディレクトリの `app.db` に残ります。別ファイルで試す場合は `cabal run story-api -- trial.db` で起動してください。
 

@@ -1,0 +1,11 @@
+{
+  "name": "DDD Trilemma Haskell",
+  "build": { "dockerfile": "Dockerfile" },
+  "remoteUser": "vscode",
+  "postCreateCommand": "cabal update && cabal build all --enable-tests",
+  "waitFor": "postCreateCommand",
+  "forwardPorts": [5080],
+  "portsAttributes": {
+    "5080": { "label": "Story API" }
+  }
+}
