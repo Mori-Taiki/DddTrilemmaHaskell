@@ -30,6 +30,7 @@ test-suite spec
   type: exitcode-stdio-1.0
   hs-source-dirs: test
   main-is: Spec.hs
+  other-modules: DomainSpec, StoreSpec, HttpSpec, Fixtures
   ghc-options: -threaded
   build-depends: base, aeson, async, bytestring, ddd-trilemma, hspec,
                  http-types, sqlite-simple, temporary, text, wai, wai-extra
